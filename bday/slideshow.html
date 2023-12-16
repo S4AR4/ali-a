@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jimin's Birthday Celebration</title>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap">
+    <style>
+        body {
+            font-family: 'Silkscreen', monospace;
+            text-align: center;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        #slideshow-container {
+            max-width: 600px;
+            position: relative;
+            margin: auto;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        h1 {
+            font-family: 'Silkscreen', monospace;
+            font-weight: bold;
+            font-size: 36px;
+        }
+
+        #birthday-message {
+            margin-top: 20px;
+            font-size: 18px;
+            font-family: 'Silkscreen', monospace;
+            background-color: white;
+            color: #333;
+            padding: 10px;
+            border-radius: 10px;
+            word-wrap: break-word;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .prev {
+            left: 25%;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .next {
+            right: 25%;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+<h1>Happy Birthday!</h1>
+
+<div id="slideshow-container">
+    <div class="mySlides">
+        <img src="jimin_image1.jpg" alt="Jimin Image 1">
+    </div>
+
+    <div class="mySlides">
+        <img src="jimin_image2.jpg" alt="Jimin Image 2">
+    </div>
+
+    <!-- Add more images as needed -->
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<div id="birthday-message">
+    <p>Wishing you a fantastic birthday celebration filled with joy and happiness,</p>
+    <p>just like Jimin brings to your life! May your day be as special as you are.</p>
+</div>
+
+<script>
+    let slideIndex = 0;
+    const totalSlides = document.getElementsByClassName("mySlides").length;
+
+    function showSlides() {
+        let i;
+        const slides = document.getElementsByClassName("mySlides");
+
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        if (slideIndex >= slides.length) {
+            slideIndex = 0;
+        }
+
+        if (slideIndex < 0) {
+            slideIndex = slides.length - 1;
+        }
+
+        slides[slideIndex].style.display = "block";
+    }
+
+    function plusSlides(n) {
+        slideIndex += n;
+        showSlides();
+    }
+
+    showSlides(); // Initial call to start the slideshow
+</script>
+
+</body>
+</html>
